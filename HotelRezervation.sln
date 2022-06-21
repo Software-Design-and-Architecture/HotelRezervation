@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{C9B647E5-3195-4DF7-838C-D61D4FABD4FE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportingProcesses", "ReportingProcesses\ReportingProcesses.csproj", "{6CDF71B5-FED0-4607-9B4E-48B02CC7038B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsUI", "WinFormsUI\WinFormsUI.csproj", "{B2ABB893-F8A1-4EC0-B761-81A58865A923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C9B647E5-3195-4DF7-838C-D61D4FABD4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9B647E5-3195-4DF7-838C-D61D4FABD4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9B647E5-3195-4DF7-838C-D61D4FABD4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDF71B5-FED0-4607-9B4E-48B02CC7038B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDF71B5-FED0-4607-9B4E-48B02CC7038B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDF71B5-FED0-4607-9B4E-48B02CC7038B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDF71B5-FED0-4607-9B4E-48B02CC7038B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2ABB893-F8A1-4EC0-B761-81A58865A923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2ABB893-F8A1-4EC0-B761-81A58865A923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2ABB893-F8A1-4EC0-B761-81A58865A923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2ABB893-F8A1-4EC0-B761-81A58865A923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
