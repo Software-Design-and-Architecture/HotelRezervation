@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ReportingProcesses\ReportingProcesses.csproj" />
+    <ProjectReference Include="..\TravelPlanning\TravelPlanning.csproj" />
   </ItemGroup>
 
 </Project>

@@ -20,7 +20,9 @@ namespace WinFormsUI
         TravelManager travelManager = new TravelManager(new EfTravelDal());
         private void btn_CreateTravel_Click(object sender, EventArgs e)
         {
-
+            frmTravel frmTravel = new frmTravel() { UserId = this.UserId };
+            frmTravel.Show();
+            this.Hide();
 
         }
 
