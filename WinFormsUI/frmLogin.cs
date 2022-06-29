@@ -28,11 +28,10 @@ namespace WinFormsUI
                     frmProcess.Show();
                     this.Hide();
                 }
-  
             }
             if (txt_UserName.Text == "" || txt_Password.Text == "")
             {
-                MessageBox.Show("Lütfen gerekli alanları doldurun");
+                MessageBox.Show("Lütfen hatalı alanları düzeltin.","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
         }
@@ -42,6 +41,21 @@ namespace WinFormsUI
             frmRegister frmRegister = new frmRegister();
             frmRegister.Show();
             this.Hide();
+        }
+
+        private void pcr_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_Login_MouseHover(object sender, EventArgs e)
+        {
+            btn_Login.ForeColor = Color.Green;
+        }
+
+        private void btn_Login_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Login.ForeColor = Color.Black;
         }
     }
 }

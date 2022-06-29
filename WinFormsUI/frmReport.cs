@@ -27,6 +27,15 @@ namespace WinFormsUI
         public int UserId { get; set; }
         int reportType;
         TravelManager travelManager = new TravelManager(new EfTravelDal());
+
+        public void ReportTypeEnabled()
+        {
+            lbl_ReportType1.Visible = true;
+            lbl_ReportType2.Visible = true;
+            lbl_ReportType3.Visible = true;
+            lbl_ReportType4.Visible = true;
+        }
+
         private void btn_CreateReport_Click(object sender, EventArgs e)
         {
             Report report = new Report();
@@ -78,21 +87,19 @@ namespace WinFormsUI
                         string str = BuildReport(reportManager, reportType);
                         streamWriter.Write(str);
                         streamWriter.Close();
-                        this.Hide();
+                        ReportTypeEnabled();
                     }
                     else if (saveFileDialog1.FilterIndex == 2)
                     {
                         IReportBuilder xmlReportBuilder = new XmlReportBuilder(report);
                         ReportManager reportManager = new ReportManager(xmlReportBuilder);
                         StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName.ToString());
-                    //string str = reportManager.Build();
                         string str = "<?xml version = \"1.0\" encoding = \"utf-8\" standalone =\"no\"?><body>";
                         str += BuildReport(reportManager, reportType);
                         str+="</body>";
                         streamWriter.Write(str);
                         streamWriter.Close();
-                        this.Hide();
-
+                        ReportTypeEnabled();
                     }
                     else 
                     {
@@ -105,8 +112,7 @@ namespace WinFormsUI
                         JsonSerializer.Serialize(str);
                         streamWriter.Write(str);
                         streamWriter.Close();
-                        this.Hide();
-
+                        ReportTypeEnabled();
                     }               
             }
         }
@@ -172,6 +178,67 @@ namespace WinFormsUI
 
         }
 
+        private void btn_CreateReport_MouseHover(object sender, EventArgs e)
+        {
+            btn_CreateReport.ForeColor = Color.MediumPurple;
+        }
 
+        private void btn_CreateReport_MouseLeave(object sender, EventArgs e)
+        {
+            btn_CreateReport.ForeColor = Color.Black;
+        }
+
+        private void pcr_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pcr_Back_Click(object sender, EventArgs e)
+        {
+            frmProcess frmProcess = new frmProcess() { UserId = this.UserId };
+            frmProcess.Show();
+            this.Hide();
+        }
+
+        private void lbl_ReportType1_MouseHover(object sender, EventArgs e)
+        {
+            lbl_ReportType1.ForeColor = Color.Crimson;
+        }
+
+        private void lbl_ReportType1_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_ReportType1.ForeColor = Color.Black;
+
+        }
+
+        private void lbl_ReportType2_MouseHover(object sender, EventArgs e)
+        {
+            lbl_ReportType2.ForeColor = Color.Crimson;
+        }
+
+        private void lbl_ReportType2_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_ReportType2.ForeColor = Color.Black;
+        }
+
+        private void lbl_ReportType3_MouseHover(object sender, EventArgs e)
+        {
+            lbl_ReportType3.ForeColor = Color.Crimson;
+        }
+
+        private void lbl_ReportType3_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_ReportType3.ForeColor = Color.Black;
+        }
+
+        private void lbl_ReportType4_MouseHover(object sender, EventArgs e)
+        {
+            lbl_ReportType4.ForeColor = Color.Crimson;
+        }
+
+        private void lbl_ReportType4_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_ReportType4.ForeColor = Color.Black;
+        }
     }
 }

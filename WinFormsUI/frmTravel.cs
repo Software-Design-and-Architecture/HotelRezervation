@@ -308,5 +308,49 @@ namespace WinFormsUI
                 selectedAccommodationTools = dgv_AccommodationTools.SelectedCells[0].RowIndex;
             }
         }
+
+        private void btn_Show_MouseHover(object sender, EventArgs e)
+        {
+            btn_Show.ForeColor = Color.PowderBlue;
+        }
+
+        private void btn_Show_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Show.ForeColor = Color.Black;
+        }
+
+        private void btn_Delete_MouseHover(object sender, EventArgs e)
+        {
+            btn_Delete.ForeColor = Color.Red;
+        }
+
+        private void btn_Delete_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Delete.ForeColor = Color.Black;
+        }
+
+        private void btn_CreateTravel_MouseHover(object sender, EventArgs e)
+        {
+            btn_CreateTravel.ForeColor = Color.Green;
+        }
+
+        private void btn_CreateTravel_MouseLeave(object sender, EventArgs e)
+        {
+            btn_CreateTravel.ForeColor = Color.Black;
+        }
+
+        private void pcr_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pcr_Back_Click(object sender, EventArgs e)
+        {
+            //FrmProcess yüklenilidği zaman mevcut müşterinin ID'sinin
+            //aktarılması gerekiyor açılan yeni FrmProcess sayfasına
+            frmProcess frmProcess = new frmProcess() { UserId = this.UserId };
+            frmProcess.Show();
+            this.Hide();
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace DataAccess.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
            
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-TOT4JFM;Database=HotelRezarvationDB;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0AQV4FJ;Database=HotelRezarvationDB;Trusted_Connection=true");
 
         }
         public DbSet<Travel> Travels { get; set; }

@@ -22,7 +22,7 @@ namespace WinFormsUI
         {
             if (txt_UserName.Text=="" || txt_Password.Text=="")
             {
-                MessageBox.Show("Lütfen gerekli alanları doldurun");
+                MessageBox.Show("Lütfen gerekli alanları doldurun","UYARI",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -31,7 +31,7 @@ namespace WinFormsUI
                 {
                     if (item.UserName == txt_UserName.Text && item.Password == txt_Password.Text)
                     {
-                        MessageBox.Show("Bu kullanıcı zaten var lütfen giriş yapın");
+                        MessageBox.Show("Bu Kullanıcı Sistemde Kayıtlıdır, Lütfen Giriş Yapın.","BİLGİLENDİRME",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                         frmLogin frmLogin = new frmLogin();
                         frmLogin.Show();
                         this.Hide();
@@ -40,7 +40,7 @@ namespace WinFormsUI
                 userManager.Add(new User
                 {
                     UserName= txt_UserName.Text,
-                    Address = txt_Address.Text,
+                    Address = cmbx_Address.Text,
                     LastName = txt_LastName.Text,
                     Name = txt_Name.Text,
                     Password = txt_Password.Text
@@ -50,6 +50,28 @@ namespace WinFormsUI
                 this.Hide();
 
             }
+        }
+
+        private void btn_Register_MouseHover(object sender, EventArgs e)
+        {
+            btn_Register.ForeColor = Color.LightPink;
+        }
+
+        private void btn_Register_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Register.ForeColor = Color.Black;
+        }
+
+        private void pcr_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pcr_Back_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Hide();
         }
     }
 }

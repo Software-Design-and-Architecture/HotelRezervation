@@ -41,5 +41,37 @@ namespace WinFormsUI
             
 
         }
+
+        private void btn_CreateReport_MouseHover(object sender, EventArgs e)
+        {
+            btn_CreateReport.ForeColor = Color.Salmon;
+        }
+
+        private void btn_CreateReport_MouseLeave(object sender, EventArgs e)
+        {
+            btn_CreateReport.ForeColor = Color.Black;
+        }
+
+        private void btn_CreateTravel_MouseHover(object sender, EventArgs e)
+        {
+            btn_CreateTravel.ForeColor = Color.DarkTurquoise;
+        }
+
+        private void btn_CreateTravel_MouseLeave(object sender, EventArgs e)
+        {
+            btn_CreateTravel.ForeColor = Color.Black;
+        }
+
+        private void pcr_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pcr_Back_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Hide();
+        }
     }
 }
